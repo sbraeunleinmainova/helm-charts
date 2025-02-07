@@ -1,0 +1,28 @@
+
+replicaCount: 1
+
+image:
+  repository: m2rn1.azurecr.io/frost-data-aggregator
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3002
+
+ingress:
+  enabled: false
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 1204Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
+
+env:
+  - name: PORT
+    value: "3002"
+  - name: CORS_ORIGIN
+    value: "http://smart-city-platform.lndo.site"

@@ -24,5 +24,3 @@ resources:
 env:
   - name: PORT
     value: "3002"
-  - name: CORS_ORIGIN
-    value: "http://smart-city-platform.lndo.site"

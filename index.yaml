@@ -3,6 +3,16 @@ entries:
   frost-data-aggregator:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2025-02-10T09:01:08.593487533Z"
+    description: A Helm chart for Frost Data Aggregator
+    digest: ecad9c5eb872789ab369184d09d07d0a36f774b6b07423f93a33bf70b2ced2a6
+    name: frost-data-aggregator
+    type: application
+    urls:
+    - https://github.com/sbraeunleinmainova/helm-charts/releases/download/frost-data-aggregator-0.1.3/frost-data-aggregator-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2025-02-07T15:48:58.027501556Z"
     description: A Helm chart for Frost Data Aggregator
     digest: 13cd0dfcbeecd012e6ddcd16f7fced7a44f2a7b46811bb8c035632d1918ac60e
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/sbraeunleinmainova/helm-charts/releases/download/frost-data-aggregator-0.1.1/frost-data-aggregator-0.1.1.tgz
     version: 0.1.1
-generated: "2025-02-07T15:48:58.027508799Z"
+generated: "2025-02-10T09:01:08.593503193Z"

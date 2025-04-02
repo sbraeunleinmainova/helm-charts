@@ -61,4 +61,37 @@ entries:
     urls:
     - https://github.com/sbraeunleinmainova/helm-charts/releases/download/frost-data-aggregator-0.1.1/frost-data-aggregator-0.1.1.tgz
     version: 0.1.1
-generated: "2025-02-12T12:57:03.512454064Z"
+  packet-import:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-04-02T12:20:36.755493521Z"
+    description: A Helm chart for the Packet Import Service
+    digest: bebc3da0e7a5cfede3de5170d378922bfa44de0b5eabbe424af269c7e6f02e40
+    name: packet-import
+    type: application
+    urls:
+    - https://github.com/sbraeunleinmainova/helm-charts/releases/download/packet-import-0.1.0/packet-import-0.1.0.tgz
+    version: 0.1.0
+  rest-queue-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-04-02T12:20:36.901372105Z"
+    description: A Helm chart for the REST Queue Service
+    digest: b4d4b7ed25eed10daa07dad2167aac09d925a3f51f92dc460247c951569de974
+    name: rest-queue-service
+    type: application
+    urls:
+    - https://github.com/sbraeunleinmainova/helm-charts/releases/download/rest-queue-service-0.1.0/rest-queue-service-0.1.0.tgz
+    version: 0.1.0
+  scp:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-04-02T12:20:37.017754122Z"
+    description: Smart City Platform Helm Chart
+    digest: 6a764b71d56e524b62feb5810ac005f38b68e0b97c177f2eedd19abe13e6522a
+    name: scp
+    type: application
+    urls:
+    - https://github.com/sbraeunleinmainova/helm-charts/releases/download/scp-0.1.0/scp-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-04-02T12:20:37.017773578Z"

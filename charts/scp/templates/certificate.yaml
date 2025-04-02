@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: smart-portal-digital-tls
+spec:
+  secretName: smart-portal-digital-tls
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  dnsNames:
+    - smart-portal.digital
+  duration: 2160h # 90 days
+  renewBefore: 360h # 15 days

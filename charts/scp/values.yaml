@@ -1,0 +1,241 @@
+# Default values for ..
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+replicaCount: 1
+
+# This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
+image:
+  repository: nginx
+  # This sets the pull policy for images.
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+# This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+imagePullSecrets: []
+# This is to override the chart name.
+nameOverride: ""
+fullnameOverride: ""
+
+#This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+# This is for setting Kubernetes Annotations to a Pod.
+# For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/ 
+podAnnotations: {}
+# This is for setting Kubernetes Labels to a Pod.
+# For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+podLabels: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+# This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
+service:
+  # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
+  type: ClusterIP
+  # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
+  port: 80
+
+# This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
+ingress:
+  enabled: true
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+image:
+  repository: m2rn1.azurecr.io/scp
+  tag: civitas
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: 1
+    memory: 1Gi
+  requests:
+    cpu: 500m
+    memory: 512Mi
+
+env:
+  - name: "APP_NAME"
+    value: "SCP"
+  - name: "APP_ENV"
+    value: "production"
+  - name: "APP_DEBUG"
+    value: "false"
+  - name: "APP_URL"
+    value: "https://smart-portal.digital"
+  - name: "DEBUGBAR_ENABLED"
+    value: "false"
+  - name: "LOG_CHANNEL"
+    value: "stack"
+  - name: "LOG_LEVEL"
+    value: "info"
+  - name: "VITE_SMART_CITY_PLATFORM"
+    value: "true"
+  - name: "VITE_ELEMENT_IOT_SERVER"
+    value: "https://xhr2.mainova.digital"
+  - name: "VITE_LIVE_UPDATE_URL"
+    value: "http://localhost:3050"
+  - name: "VITE_DEVICE_CACHE"
+    value: "http://host.docker.internal:3060"
+  - name: "VITE_MAINOVA_DOMAINS"
+    value: "mainovaffm.onmicrosoft.com,mainova.de,srm-rheinmain.de,mainova-servicedienste.de"
+  - name: "VITE_NETWORK_TRACKER_URL"
+    value: "http://localhost:5173"
+  - name: "VITE_APP_URL"
+    value: "https://smart-portal.digital"
+  - name: "VITE_DEV"
+    value: "false"
+  - name: "DB_CONNECTION"
+    value: "mysql"
+  - name: "DB_HOST"
+    value: "smart-city-platform.mysql.database.azure.com"
+  - name: "DB_PORT"
+    value: "3306"
+  - name: "DB_DATABASE"
+    value: "smartcity-scp-dev-we"
+  - name: "DB_USERNAME"
+    value: "scp"
+  - name: "KEYCLOAK_URL"
+    value: "https://idm.smart-portal.digital"
+  - name: "VITE_KEYCLOAK_URL"
+    value: "https://idm.smart-portal.digital"
+  - name: "VITE_KEYCLOAK_REALM"
+    value: "dev"
+  - name: "VITE_KEYCLOAK_CLIENT_ID"
+    value: "api-access"
+  - name: "KEYCLOAK_USER_PROVIDER_CREDENTIAL"
+    value: "email"
+  - name: "KEYCLOAK_TOKEN_PRINCIPAL_ATTRIBUTE"
+    value: "email"
+  - name: "KEYCLOAK_IGNORE_RESOURCES_VALIDATION"
+    value: "true"
+  - name: "VITE_CIVITAS_KEYCLOAK_URL"
+    value: "https://idm.smart-portal.digital"
+  - name: "VITE_CIVITAS_KEYCLOAK_REALM"
+    value: "dev"
+  - name: "VITE_CIVITAS_KEYCLOAK_CLIENT_ID"
+    value: "api-access"
+  - name: "VITE_FROST_URL"
+    value: "https://api.smart-portal.digital/context/sensorthings/v1.1"
+  - name: "VITE_FROST_DATA_AGGREGATOR_URL"
+    value: "https://api.smart-portal.digital/context/sensorthings/v1.1/aggregate"
+  - name: "VITE_WEATHER_SERVICE_URL"
+    value: "https://weatherdev.mainova.digital"
+  - name: "KEYCLOAK_REALM_PUBLIC_KEY"
+    value: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm7nllrEKNyQ+xNTHxFfQSifaXlys+vN5WWkT1bJUyTUfuA3rDdaXXytHS/7UYpggqS8Wr1tpd5daoZQ8/TDZQFpVzSo+ckS7oDOhCY71+yQ8zhNwMuiKU5sz1UEU/2GJvxKKfJqIUipvbhkVJp75JeBpmzU3WBewFWf4ubjGU5Bvs4MBENm21LpzyFbS1A6c+fr8du0Fk1hgiN7veDNB1dPJeCPtKjX6q0ZJk/mUdL4NkFanF9Gck9Tl/kj2RzC0R2JJ/TKqOXBmtKOImDmGb5nT1IkyGK4Tv0xLpqzXl+8n93RwNbBryV6D8o81ZastGN6AJoauJDkEfZRnagZ3GwIDAQAB"
+
+
+
+secrets:
+  - name: "APP_KEY"
+    valueFrom:
+      secretKeyRef:
+        name: scp-secrets
+        key: app-key
+  - name: "DB_PASSWORD"
+    valueFrom:
+      secretKeyRef:
+        name: scp-secrets
+        key: db-password
+  - name: "GATEWAYS_TOKEN"
+    valueFrom:
+      secretKeyRef:
+        name: scp-secrets
+        key: gateways-token
+  - name: "KEYCLOAK_CLIENT_SECRET"
+    valueFrom:
+      secretKeyRef:
+        name: scp-secrets
+        key: keycloak-client-secret
+    valueFrom:
+      secretKeyRef:
+        name: scp-secrets
+        key: civitas-keycloak-client-secret
+  - name: "VITE_CIVITAS_USERNAME"
+    valueFrom:
+      secretKeyRef:
+        name: scp-secrets
+        key: civitas-username
+  - name: "VITE_CIVITAS_PASSWORD"
+    valueFrom:
+      secretKeyRef:
+        name: scp-secrets
+        key: civitas-password
+  - name: "VITE_WEATHER_SERVICE_TOKEN"
+    valueFrom:
+      secretKeyRef:
+        name: scp-secrets
+        key: weather-service-token
+  - name: "SCP_USER_PASSWORD"
+    valueFrom:
+      secretKeyRef:
+        name: scp-secrets
+        key: scp-user-password
+
+# This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+
+#This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+# Additional volumes on the output Deployment definition.
+volumes: []
+# - name: foo
+#   secret:
+#     secretName: mysecret
+#     optional: false
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts: []
+# - name: foo
+#   mountPath: "/etc/foo"
+#   readOnly: true
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

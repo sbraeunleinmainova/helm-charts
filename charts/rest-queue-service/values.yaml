@@ -1,0 +1,38 @@
+# Default values for rest-queue-service
+replicaCount: 1
+
+image:
+  repository: m2rn1.azurecr.io/rest-queue-service
+  pullPolicy: Always
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 3000
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+env:
+  PORT: 3000
+  
+  # RabbitMQ configuration
+  RABBITMQ_URL: amqp://user:password@example.com:5672
+  QUEUE_NAME: example-queue
+  
+  # Security
+  # Comma separated list of api keys
+  API_KEYS: ""
+  
+  # Retry configuration
+  MAX_RETRIES: 3
+  RETRY_DELAY: 1000
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

@@ -1,0 +1,43 @@
+# Default values for packet-import
+replicaCount: 1
+
+image:
+  repository: m2rn1.azurecr.io/packet-import
+  pullPolicy: Always
+  tag: "latest"
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+env:
+  # FROST and Keycloak settings
+  FROST_BASE_URL: "http://example.com/FROST-Server/v1.1"
+  KEYCLOAK_URL: "http://example.com/auth"
+  KEYCLOAK_REALM: "example-realm"
+  KEYCLOAK_CLIENT_ID: "example-client"
+  KEYCLOAK_CLIENT_SECRET: "example-secret-12345"
+  KEYCLOAK_API_USERNAME: "example-admin"
+  KEYCLOAK_API_PASSWORD: "example-password"
+  
+  # RabbitMQ settings
+  RABBITMQ_URL: "amqp://user:password@example.com:5672"
+  QUEUE_NAME: "example-queue"
+  DEAD_LETTER_EXCHANGE: "example-dead-letter-exchange"
+  DEAD_LETTER_QUEUE: "example-dead-letter-queue"
+  
+  # Database settings
+  DB_HOST: "example-host"
+  DB_PORT: "5432"
+  DB_USER: "example-user"
+  DB_PASSWORD: "example-password"
+  DB_NAME: "example-database"
+
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

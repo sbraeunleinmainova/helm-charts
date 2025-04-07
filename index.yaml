@@ -64,6 +64,16 @@ entries:
   packet-import:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-04-07T09:11:15.02418934Z"
+    description: A Helm chart for the Packet Import Service
+    digest: f08668be4fd999e3fca211a421ae8c5535223ba8a394bb15aa5e81657ea0c816
+    name: packet-import
+    type: application
+    urls:
+    - https://github.com/sbraeunleinmainova/helm-charts/releases/download/packet-import-0.6.0/packet-import-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-04-07T09:04:48.852268244Z"
     description: A Helm chart for the Packet Import Service
     digest: 40c203a87cea3dc8d94d9fc3075bb9fe8978f96ebfe54c3c674b709a8069cb45
@@ -174,4 +184,4 @@ entries:
     urls:
     - https://github.com/sbraeunleinmainova/helm-charts/releases/download/scp-0.1.0/scp-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-07T09:10:09.934241149Z"
+generated: "2025-04-07T09:11:15.024235937Z"

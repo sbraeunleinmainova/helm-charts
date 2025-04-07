@@ -64,6 +64,16 @@ entries:
   packet-import:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-04-07T08:54:03.263241368Z"
+    description: A Helm chart for the Packet Import Service
+    digest: fea4ad576cae4348cffea28d1368e83036507d15914a5585dd6e96d7a6b072e4
+    name: packet-import
+    type: application
+    urls:
+    - https://github.com/sbraeunleinmainova/helm-charts/releases/download/packet-import-0.4.0/packet-import-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-04-07T08:40:09.608154427Z"
     description: A Helm chart for the Packet Import Service
     digest: c14fabdaa2d56d0004ddcd4b52767cbdc247acdefb4ec42f17101c19fdb01ec6
@@ -93,6 +103,16 @@ entries:
     - https://github.com/sbraeunleinmainova/helm-charts/releases/download/packet-import-0.1.0/packet-import-0.1.0.tgz
     version: 0.1.0
   rest-queue-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-04-07T08:54:03.427351966Z"
+    description: A Helm chart for the REST Queue Service
+    digest: 12c4760301d463193cb15978617cedbe577aaa66b6b3f5cfcc5eccaa6355ebb0
+    name: rest-queue-service
+    type: application
+    urls:
+    - https://github.com/sbraeunleinmainova/helm-charts/releases/download/rest-queue-service-0.4.0/rest-queue-service-0.4.0.tgz
+    version: 0.4.0
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2025-04-07T08:40:09.716056193Z"
@@ -134,4 +154,4 @@ entries:
     urls:
     - https://github.com/sbraeunleinmainova/helm-charts/releases/download/scp-0.1.0/scp-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-07T08:40:09.716084166Z"
+generated: "2025-04-07T08:54:03.427412439Z"

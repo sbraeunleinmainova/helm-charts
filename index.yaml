@@ -115,6 +115,16 @@ entries:
   rest-queue-service:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-04-07T09:10:09.934208047Z"
+    description: A Helm chart for the REST Queue Service
+    digest: aaa738248d459d844e9e78a5552bd5da8cc7c7a34231d183559ee874c69dc1bc
+    name: rest-queue-service
+    type: application
+    urls:
+    - https://github.com/sbraeunleinmainova/helm-charts/releases/download/rest-queue-service-0.5.0/rest-queue-service-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-04-07T08:54:03.427351966Z"
     description: A Helm chart for the REST Queue Service
     digest: 12c4760301d463193cb15978617cedbe577aaa66b6b3f5cfcc5eccaa6355ebb0
@@ -164,4 +174,4 @@ entries:
     urls:
     - https://github.com/sbraeunleinmainova/helm-charts/releases/download/scp-0.1.0/scp-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-07T09:04:48.852306585Z"
+generated: "2025-04-07T09:10:09.934241149Z"
